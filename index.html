@@ -686,6 +686,31 @@
                 padding: 0;
             }
         }
+
+        /* Footer Hint (Screen Only) */
+        .footer-hint {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            font-size: 0.95em;
+            z-index: 9999;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @media print {
+            .footer-hint {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 
@@ -822,7 +847,7 @@
                 </h1>
                 <h2>
                     <span class="en">IT & HR MANAGER | COMPUTER ENGINEER</span>
-                    <span class="ar">مدير تكنولوجيا المعلومات والموارد البشرية | مهندسة حاسبات</span>
+                    <span class="ar">مديرة تكنولوجيا المعلومات والموارد البشرية | مهندسة حاسبات</span>
                 </h2>
             </header>
 
@@ -855,7 +880,7 @@
                     <div class="job-header">
                         <span class="job-title">
                             <span class="en">IT & HR Manager</span>
-                            <span class="ar">مدير قسم IT و HR</span>
+                            <span class="ar">مديرة قسم IT و HR</span>
                         </span>
                         <span class="date">
                             <span class="en">Present</span>
@@ -883,7 +908,7 @@
                     <div class="job-header">
                         <span class="job-title">
                             <span class="en">Acting Dean's Office Manager & IT Lead</span>
-                            <span class="ar">مدير مكتب العميد (بالوكالة) ومسؤول IT</span>
+                            <span class="ar">مديرة مكتب العميد (بالوكالة) ومسؤولة IT</span>
                         </span>
                         <span class="date">
                             <span class="en">2024 (5 Months)</span>
@@ -910,7 +935,7 @@
                     <div class="job-header">
                         <span class="job-title">
                             <span class="en">IT Specialist & Biometrics Manager</span>
-                            <span class="ar">أخصائي IT ومدير البصمة</span>
+                            <span class="ar">أخصائية IT ومديرة البصمة</span>
                         </span>
                         <span class="date">2023</span>
                     </div>
@@ -934,7 +959,7 @@
                     <div class="job-header">
                         <span class="job-title">
                             <span class="en">HR Manager & Administrator</span>
-                            <span class="ar">مدير موارد بشرية وإداري</span>
+                            <span class="ar">مديرة موارد بشرية وإدارية</span>
                         </span>
                         <span class="date">
                             <span class="en">2022</span>
@@ -958,6 +983,14 @@
         </main>
     </div>
 
+    <!-- Non-printable Footer Hint -->
+    <div class="footer-hint">
+        <span class="en">💡 <strong>Interactive CV:</strong> Click on the Phone number or Email to contact
+            directly.</span>
+        <span class="ar">💡 <strong>سيرة ذاتية تفاعلية:</strong> يمكنك النقر على رقم الهاتف أو البريد الإلكتروني للتواصل
+            مباشرة.</span>
+    </div>
+
     <script>
         function toggleLanguage() {
             document.body.classList.toggle('rtl');
@@ -966,4 +999,3 @@
 </body>
 
 </html>
-
