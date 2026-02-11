@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawthar Kamal Mohsin - CV</title>
+    <!-- Google Fonts: Tajawal for Arabic, Poppins for English -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            /* Warm Earth Palette */
+            --primary-color: #4A3B32;
+            /* Deep Warm Graphite/Coffee */
+            --accent-color: #C08B5C;
+            /* Muted Bronze/Terracotta */
+            --bg-color: #F9F7F2;
+            /* Warm Alabaster */
+            --text-color: #333333;
+            --text-light: #666666;
+            --sidebar-text: #F9F7F2;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        /* General Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e0e0e0;
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        body.rtl {
+            font-family: 'Tajawal', sans-serif;
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* A4 Paper Setup */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background: var(--white);
+            margin: 30px auto;
+            display: flex;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Left Sidebar */
+        .sidebar {
+            width: 32%;
+            background-color: var(--primary-color);
+            color: var(--sidebar-text);
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        /* Diagonal Cut Design Element */
+        .sidebar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -20px;
+            width: 40px;
+            height: 100%;
+            background-color: var(--primary-color);
+            transform: skewX(-5deg);
+            z-index: -1;
+            display: none;
+            /* Can be enabled for extra flair */
+        }
+
+        .sidebar h3 {
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            margin-top: 35px;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-color);
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 12px;
+            font-size: 0.95em;
+            transition: var(--transition);
+        }
+
+        .sidebar li:hover {
+            transform: translateX(5px);
+            color: var(--accent-color);
+        }
+
+        body.rtl .sidebar li:hover {
+            transform: translateX(-5px);
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            /* or flex-start if content wraps */
+            gap: 15px;
+            font-size: 0.95em;
+        }
+
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-icon {
+            color: var(--accent-color);
+            font-size: 1.2em;
+            min-width: 20px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            margin-right: 5px;
+            font-size: 0.85em;
+            border: 1px solid transparent;
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Right Content */
+        .main-content {
+            width: 68%;
+            padding: 50px 40px;
+            background-color: var(--bg-color);
+        }
+
+        .header {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .header:hover::after {
+            width: 100px;
+        }
+
+        body.rtl .header::after {
+            left: auto;
+            right: 0;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .header h2 {
+            font-size: 1.1em;
+            color: var(--accent-color);
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        body.rtl .section-title::before {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+        .job {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        body.rtl .job {
+            border-left: none;
+            border-right: 4px solid var(--accent-color);
+        }
+
+        .job:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+
+        .company {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .date {
+            color: #888;
+            font-size: 0.85em;
+            font-weight: 500;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .job ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        body.rtl .job ul {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+
+        .job li {
+            margin-bottom: 6px;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        /* Controls Header */
+        .controls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            padding: 10px 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            /* Align buttons to right */
+            align-items: center;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                justify-content: center;
+                padding: 10px 20px;
+            }
+
+            .page {
+                width: 95%;
+                margin-top: 70px;
+            }
+        }
+
+        .btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+        }
+
+        /* Adjust page margin to account for fixed header */
+        .page {
+            margin-top: 80px;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .contact-link {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+            font-family: inherit;
+            /* Critical for language switching */
+            display: inline-block;
+            /* Allows transform if needed */
+            border-bottom: 1px solid transparent;
+            /* Prepare for hover underline */
+            word-break: break-all;
+            /* Ensure long emails break correctly */
+        }
+
+        .contact-link:hover {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+            transform: translateY(-1px);
+        }
+
+        .contact-icon {
+            color: var(--accent-color);
+            font-size: 1.1em;
+            margin-top: 3px;
+        }
+
+        .contact-text {
+            font-size: 0.95em;
+            overflow-wrap: anywhere;
+            /* Modern browsers */
+            word-break: break-word;
+            /* Compatibility */
+        }
+
+        .contact-icon {
+            color: var(--accent-color);
+            font-size: 1.1em;
+            margin-top: 3px;
+        }
+
+        /* Hide old lang-toggle styles if present */
+        .lang-toggle {
+            display: none;
+        }
+
+        /* Language Visibility Control */
+        .ar {
+            display: none;
+        }
+
+        body.rtl .en {
+            display: none;
+        }
+
+        body.rtl .ar {
+            display: block;
+        }
+
+        /* Print Settings */
+        @media print {
+            @page {
+                margin: 0;
+                size: A4;
+            }
+
+            html,
+            body {
+                width: 210mm;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: white;
+            }
+
+            body {
+                /* Increased to 90% to reduce white space sides & fill page */
+                zoom: 85%;
+                display: block;
+                margin: auto auto;
+                /* Center the zoomed block */
+                padding-top: 0;
+                /* Remove white gap */
+            }
+
+            .page {
+                width: 210mm;
+                height: auto;
+                min-height: 297mm;
+                margin: auto auto;
+                /* Center horizontal */
+
+                box-shadow: none;
+                border: none;
+                display: flex;
+                overflow: visible;
+            }
+
+            .controls {
+                display: none !important;
+            }
+
+            .sidebar {
+                min-height: 100%;
+                /* Increased padding-top to 50px to simulate the spacing user wanted, but with color */
+                padding: 50px 20px 30px 20px !important;
+                background-color: var(--primary-color) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .main-content {
+                height: auto;
+                /* Match sidebar top padding for alignment */
+                padding: 50px 25px 30px 25px !important;
+            }
+
+            /* Optimized Spacing for 85% Zoom */
+            .sidebar h3:first-of-type {
+                margin-top: 0 !important;
+            }
+
+            .header {
+                margin-bottom: 15px;
+            }
+
+            .header h1 {
+                margin-bottom: 5px;
+                font-size: 2em;
+            }
+
+            .header h2 {
+                margin-top: 0;
+                font-size: 1em;
+            }
+
+            /* Fill bottom space for Arabic by relaxing density */
+            body.rtl {
+                zoom: 98%;
+                margin: 0;
+            }
+
+            body.rtl .job {
+                margin-bottom: 15px;
+                padding: 12px;
+            }
+
+            body.rtl .section {
+                margin-bottom: 20px;
+            }
+
+            body.rtl .header {
+                margin-bottom: 20px;
+            }
+
+            .section {
+                margin-bottom: 15px;
+            }
+
+            .section-title {
+                margin-bottom: 8px;
+                font-size: 1.1em;
+            }
+
+            .job {
+                margin-bottom: 10px;
+                padding: 10px;
+                border: 1px solid #ddd;
+            }
+
+            .job-header {
+                margin-bottom: 2px;
+            }
+
+            .job ul {
+                margin-top: 5px;
+                margin-bottom: 0;
+            }
+
+            .contact-item {
+                margin-bottom: 8px;
+            }
+
+            .sidebar h3 {
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body class="ltr">
+
+    <div class="controls">
+        <button class="btn" onclick="toggleLanguage()">
+            <span class="en">🌐 العربية</span>
+            <span class="ar">🌐 English</span>
+        </button>
+        <button class="btn" onclick="window.print()">
+            <span class="en">🖨️ Print CV</span>
+            <span class="ar">🖨️ طباعة السيرة الذاتية</span>
+        </button>
+    </div>
+
+    <div class="page">
+        <aside class="sidebar">
+            <div class="contact-info">
+                <h3>
+                    <span class="en">Contact</span>
+                    <span class="ar">معلومات الاتصال</span>
+                </h3>
+
+                <!-- Phone -->
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div class="contact-text">
+                        <div class="en"><strong>Phone:</strong></div>
+                        <div class="ar"><strong>الهاتف:</strong></div>
+                        <a href="https://wa.me/9647776950506" target="_blank" class="contact-link" dir="ltr"
+                            style="unicode-bidi: embed; text-align: inherit;">+964 777 695 0506</a>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <div class="contact-text">
+                        <div class="en"><strong>Email:</strong></div>
+                        <div class="ar"><strong>البريد:</strong></div>
+                        <a href="mailto:koka.queen.99.25@gmail.com" class="contact-link"
+                            style="font-size: 0.9em;">koka.queen.99.25@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <div class="contact-text">
+                        <div class="en"><strong>Location:</strong></div>
+                        <div class="ar"><strong>الموقع:</strong></div>
+                        <div>
+                            <span class="en">Aldora, Baghdad, Iraq</span>
+                            <span class="ar">الدورة، بغداد، العراق</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>
+                <span class="en">Education</span>
+                <span class="ar">التعليم</span>
+            </h3>
+            <div style="margin-bottom: 20px;">
+                <strong style="color:white; display:block; margin-bottom:5px;">
+                    <span class="en">B.Sc. Computer Engineering</span>
+                    <span class="ar">بكالوريوس هندسة حاسبات</span>
+                </strong>
+                <span style="opacity: 0.9;">
+                    <span class="en">Al-Mustansiriya University</span>
+                    <span class="ar">الجامعة المستنصرية</span>
+                </span>
+                <br>
+                <span style="font-size: 0.85em; opacity: 0.7;">2018 - 2022</span>
+            </div>
+
+            <h3>
+                <span class="en">Tech Skills</span>
+                <span class="ar">المهارات التقنية</span>
+            </h3>
+            <div class="skills">
+                <span class="skill-tag">Ministry Systems (SIS)</span>
+                <span class="skill-tag">Biometric Systems</span>
+                <span class="skill-tag">Web Dev (React.js)</span>
+                <span class="skill-tag">HTML & CSS</span>
+                <span class="skill-tag">Network Admin</span>
+            </div>
+
+            <h3>
+                <span class="en">Soft Skills</span>
+                <span class="ar">المهارات الشخصية</span>
+            </h3>
+            <div class="skills">
+                <span class="skill-tag">
+                    <span class="en">HR Management</span>
+                    <span class="ar">إدارة الموارد البشرية</span>
+                </span>
+                <span class="skill-tag">
+                    <span class="en">Team Leadership</span>
+                    <span class="ar">قيادة الفرق</span>
+                </span>
+                <span class="skill-tag">
+                    <span class="en">Accounting</span>
+                    <span class="ar">المحاسبة</span>
+                </span>
+                <span class="skill-tag">
+                    <span class="en">Crisis Management</span>
+                    <span class="ar">إدارة الأزمات</span>
+                </span>
+            </div>
+
+            <h3>
+                <span class="en">Languages</span>
+                <span class="ar">اللغات</span>
+            </h3>
+            <ul>
+                <li>
+                    <span class="en">Arabic (Native)</span>
+                    <span class="ar">العربية (اللغة الأم)</span>
+                </li>
+                <li>
+                    <span class="en">English (Professional)</span>
+                    <span class="ar">الإنجليزية (مستوى مهني)</span>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>
+                    <span class="en">Kawthar K. Mohsin</span>
+                    <span class="ar">كوثر كمال محسن</span>
+                </h1>
+                <h2>
+                    <span class="en">IT & HR MANAGER | COMPUTER ENGINEER</span>
+                    <span class="ar">مدير تكنولوجيا المعلومات والموارد البشرية | مهندس حاسبات</span>
+                </h2>
+            </header>
+
+            <section class="section">
+                <div class="section-title">
+                    <span class="en">Professional Profile</span>
+                    <span class="ar">الملف المهني</span>
+                </div>
+                <p class="en">
+                    Computer Engineer with a unique blend of HR management and IT expertise within the academic sector.
+                    Proven track record in managing Ministry systems (Biometric & SIS), developing web solutions for
+                    attendance tracking,
+                    and leading administrative departments to optimize university operations.
+                </p>
+                <p class="ar">
+                    مهندسة حاسبات بمهارات فريدة تجمع بين إدارة الموارد البشرية والخبرة التقنية في القطاع الأكاديمي.
+                    سجل حافل في إدارة أنظمة الوزارة (البصمة الالكترونية و SIS)، وتطوير حلول ويب لمتابعة الحضور،
+                    وقيادة الأقسام الإدارية لتحسين العمليات الجامعية.
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-title">
+                    <span class="en">Experience</span>
+                    <span class="ar">الخبرة العملية</span>
+                </div>
+
+                <!-- Job 1 -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">
+                            <span class="en">IT & HR Manager</span>
+                            <span class="ar">مدير قسم IT و HR</span>
+                        </span>
+                        <span class="date">
+                            <span class="en">Present</span>
+                            <span class="ar">لغاية الآن</span>
+                        </span>
+                    </div>
+                    <div class="company">
+                        <span class="en">Al-Hadi University (Dentistry, Nursing & Science)</span>
+                        <span class="ar">كلية الهادي الجامعة (طب الأسنان، التمريض والعلوم)</span>
+                    </div>
+                    <ul class="en">
+                        <li>Leading both Information Technology and Human Resources departments.</li>
+                        <li>Overseeing staff management, recruitment, and technical infrastructure.</li>
+                        <li>Ensuring compliance with ministry regulations for faculty data.</li>
+                    </ul>
+                    <ul class="ar">
+                        <li>إدارة قسمي تكنولوجيا المعلومات والموارد البشرية.</li>
+                        <li>الإشراف على إدارة الموظفين، التوظيف، والبنية التحتية التقنية.</li>
+                        <li>ضمان الامتثال للوائح الوزارة فيما يخص بيانات أعضاء الهيئة التدريسية.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">
+                            <span class="en">Acting Dean's Office Manager & IT Lead</span>
+                            <span class="ar">مدير مكتب العميد (بالوكالة) ومسؤول IT</span>
+                        </span>
+                        <span class="date">
+                            <span class="en">2024 (5 Months)</span>
+                            <span class="ar">2024 (5 أشهر)</span>
+                        </span>
+                    </div>
+                    <div class="company">
+                        <span class="en">Al-Hadi University</span>
+                        <span class="ar">كلية الهادي الجامعة</span>
+                    </div>
+                    <ul class="en">
+                        <li>Managed the Dean's office operations and correspondence.</li>
+                        <li>Maintained full responsibility for the IT department and electronic fingerprint systems
+                            simultaneously.</li>
+                    </ul>
+                    <ul class="ar">
+                        <li>إدارة عمليات ومراسلات مكتب العميد.</li>
+                        <li>تحمل المسؤولية الكاملة لقسم تكنولوجيا المعلومات وأنظمة البصمة الإلكترونية في نفس الوقت.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">
+                            <span class="en">IT Specialist & Biometrics Manager</span>
+                            <span class="ar">أخصائي IT ومدير البصمة</span>
+                        </span>
+                        <span class="date">2023</span>
+                    </div>
+                    <div class="company">
+                        <span class="en">Al-Hadi University</span>
+                        <span class="ar">كلية الهادي الجامعة</span>
+                    </div>
+                    <ul class="en">
+                        <li>Developed a dedicated website for attendance tracking using Web Technologies (HTML/CSS/JS).
+                        </li>
+                        <li>Managed the electronic fingerprint system for the entire university staff.</li>
+                    </ul>
+                    <ul class="ar">
+                        <li>تطوير موقع ويب مخصص لتتبع الحضور باستخدام تقنيات الويب (HTML/CSS/JS).</li>
+                        <li>إدارة نظام البصمة الإلكترونية لكادر الجامعة بالكامل.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="job">
+                    <div class="job-header">
+                        <span class="job-title">
+                            <span class="en">HR Manager & Administrator</span>
+                            <span class="ar">مدير موارد بشرية وإداري</span>
+                        </span>
+                        <span class="date">
+                            <span class="en">2022</span>
+                            <span class="ar">2022</span>
+                        </span>
+                    </div>
+                    <div class="company">
+                        <span class="en">Al-Hadi University (Main Campus)</span>
+                        <span class="ar">كلية الهادي الجامعة (المقر الرئيسي)</span>
+                    </div>
+                    <ul class="en">
+                        <li>Implemented the Ministry's Biometric and SIS systems for all faculty members.</li>
+                        <li>Managed Import/Export correspondence and served as Fund Treasurer.</li>
+                    </ul>
+                    <ul class="ar">
+                        <li>تطبيق أنظمة البصمة البيومترية و SIS التابعة للوزارة لجميع أعضاء الهيئة التدريسية.</li>
+                        <li>إدارة مراسلات الصادر والوارد والعمل كأمين صندوق.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function toggleLanguage() {
+            document.body.classList.toggle('rtl');
+        }
+    </script>
+</body>
+
+</html>
