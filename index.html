@@ -693,7 +693,6 @@
             position: fixed;
             bottom: 0;
             left: 0;
-            margin-top: 20px;
             width: 100%;
             background: #333;
             color: #fff;
@@ -708,9 +707,20 @@
             gap: 10px;
         }
 
+        /* Screen-only padding to prevent footer overlap */
+        @media screen {
+            body {
+                padding-bottom: 60px;
+            }
+        }
+
         @media print {
             .footer-hint {
                 display: none !important;
+            }
+
+            body {
+                padding-bottom: 0;
             }
         }
     </style>
