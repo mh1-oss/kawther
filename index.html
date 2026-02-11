@@ -551,6 +551,141 @@
                 margin-bottom: 10px;
             }
         }
+
+        /* Mobile Responsiveness (Screen Only) */
+        @media screen and (max-width: 768px) {
+            .page {
+                display: flex;
+                /* Ensure flex context */
+                flex-direction: column;
+                width: 100%;
+                margin: 0;
+                box-shadow: none;
+                padding: 15px;
+            }
+
+            /* Unwrap the containers to mix content */
+            .sidebar,
+            .main-content {
+                display: contents;
+            }
+
+            /* --- TOP SECTION (Negative Orders) --- */
+
+            /* 1. NAME & TITLE (-10) */
+            .header {
+                order: -10;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .header h1 {
+                font-size: 2.2em;
+                line-height: 1.2;
+            }
+
+            /* 2. CONTACT INFO (-9) */
+            .contact-info {
+                order: -9;
+                background-color: var(--primary-color);
+                color: white;
+                padding: 15px;
+                border-radius: 8px;
+                margin-bottom: 25px;
+            }
+
+
+
+            /* Fix contact text color - High Specificity */
+            .sidebar .contact-info,
+            .sidebar .contact-info .contact-text,
+            .sidebar .contact-text a,
+            .sidebar .contact-info h3,
+            .sidebar .contact-info div,
+            .sidebar .contact-info strong,
+            .sidebar .contact-info span {
+                color: white !important;
+            }
+
+            .contact-info h3 {
+                margin-top: 0 !important;
+                border-bottom-color: rgba(255, 255, 255, 0.5) !important;
+            }
+
+            .contact-item {
+                margin-bottom: 10px;
+            }
+
+            /* 3. PROFILE (-8) */
+            /* Target the first section in main content */
+            .main-content>.section:first-of-type {
+                order: -8;
+            }
+
+            /* --- MIDDLE SECTION (Default Order 0) --- */
+            /* This catches Skills and anything else not explicitly targeted */
+            /* They will appear after Profile (-8) and before Experience (5) */
+
+            /* Styling for Sidebar Headers (Skills, etc.) */
+            .sidebar h3 {
+                color: var(--primary-color);
+                border-bottom: 2px solid var(--accent-color);
+                padding-bottom: 8px;
+                margin-top: 25px;
+                margin-bottom: 15px;
+                width: 100%;
+                /* Ensure full width */
+            }
+
+            .sidebar>div {
+                color: #333;
+            }
+
+            .sidebar strong {
+                color: #333 !important;
+            }
+
+            /* --- BOTTOM SECTION (Positive Orders) --- */
+
+            /* 5. EXPERIENCE (5) */
+            /* Target sections after the profile */
+            .main-content>.section:not(:first-of-type) {
+                order: 5;
+            }
+
+            /* 6. EDUCATION (6) */
+            /* Education is the first h3 in sidebar and the div following it (usually 2nd div) */
+            .sidebar>h3:first-of-type,
+            /* "Education" Header */
+            .sidebar>div:nth-of-type(2) {
+                /* "Education" Content Block */
+                order: 6;
+            }
+
+            .controls {
+                position: static;
+                transform: none;
+                width: 100%;
+                margin: 0 0 15px 0;
+                padding: 10px;
+                background: #f8f8f8;
+                border-bottom: 1px solid #ddd;
+                z-index: 10;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                order: -20;
+            }
+
+            /* Reset zoom */
+            body,
+            body.rtl {
+                zoom: 1;
+                font-size: 16px;
+                margin: 0;
+                padding: 0;
+            }
+        }
     </style>
 </head>
 
